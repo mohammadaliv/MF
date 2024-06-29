@@ -1,33 +1,33 @@
-//COMLECOB PROC SRCCOB=,COPYBOOK=,LOADPATH=                             00001000
-//*******************************************************************   00010000
-//* COMPILE A COBOL PROGRAM                                             00020000
-//*******************************************************************   00030000
-//COBOL EXEC PGM=IGYCRCTL,REGION=0M,PARM=('LIB')                        00040000
-//STEPLIB  DD   DSN=IGY410.SIGYCOMP,DISP=SHR                            00050000
-//SYSUT1   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00060000
-//SYSUT2   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00070000
-//SYSUT3   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00080000
-//SYSUT4   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00090000
-//SYSUT5   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00100000
-//SYSUT6   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00110000
-//SYSUT7   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00120000
-//SYSIN    DD   DSN=&SRCCOB,DISP=SHR                                    00130000
-//SYSLIB   DD   DSN=&COPYBOOK,DISP=SHR                                  00140000
-//SYSPRINT DD   SYSOUT=*                                                00150000
-//SYSLIN   DD   DSNAME=&&LOADSET,                                       00160000
-//         UNIT=SYSALLDA,DISP=(MOD,PASS),                               00170000
-//         SPACE=(TRK,(3,3)),                                           00180000
-//         DCB=(BLKSIZE=3200)                                           00190000
-//*******************************************************************   00200000
-//* LINK EDIT A COBOL PROGRAM                                           00210000
-//*******************************************************************   00220000
-//LKED   EXEC PGM=IEWBLINK,COND=(8,LT,COBOL),REGION=0M                  00230000
-//SYSLIB   DD  DSN=SYS1.LINKLIB,DISP=SHR                                00240000
-//         DD  DSN=CEE.SCEELKED,DISP=SHR                                00250000
-//SYSPRINT DD  SYSOUT=*                                                 00260000
-//SYSLIN   DD  DSN=&&LOADSET,DISP=(OLD,DELETE)                          00270000
-//         DD  DDNAME=SYSIN                                             00280000
-//SYSLMOD  DD  DSN=&LOADPATH,DISP=OLD                                   00290000
-//SYSUT1   DD  UNIT=SYSALLDA,SPACE=(TRK,(10,10))                        00300000
-//SYSIN    DD  DUMMY                                                    00310000
+//COMLECOB PROC SRCCOB=,COPYBOOK=,LOADPATH=                             
+//*******************************************************************   
+//* COMPILE A COBOL PROGRAM                                             
+//*******************************************************************   
+//COBOL EXEC PGM=IGYCRCTL,REGION=0M,PARM=('LIB')                        
+//STEPLIB  DD   DSN=IGY410.SIGYCOMP,DISP=SHR                            
+//SYSUT1   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSUT2   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSUT3   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSUT4   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSUT5   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSUT6   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSUT7   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         
+//SYSIN    DD   DSN=&SRCCOB,DISP=SHR                                    
+//SYSLIB   DD   DSN=&COPYBOOK,DISP=SHR                                  
+//SYSPRINT DD   SYSOUT=*                                                
+//SYSLIN   DD   DSNAME=&&LOADSET,                                       
+//         UNIT=SYSALLDA,DISP=(MOD,PASS),                               
+//         SPACE=(TRK,(3,3)),                                           
+//         DCB=(BLKSIZE=3200)                                           
+//*******************************************************************   
+//* LINK EDIT A COBOL PROGRAM                                           
+//*******************************************************************   
+//LKED   EXEC PGM=IEWBLINK,COND=(8,LT,COBOL),REGION=0M                  
+//SYSLIB   DD  DSN=SYS1.LINKLIB,DISP=SHR                                
+//         DD  DSN=CEE.SCEELKED,DISP=SHR                                
+//SYSPRINT DD  SYSOUT=*                                                 
+//SYSLIN   DD  DSN=&&LOADSET,DISP=(OLD,DELETE)                          
+//         DD  DDNAME=SYSIN                                             
+//SYSLMOD  DD  DSN=&LOADPATH,DISP=OLD                                   
+//SYSUT1   DD  UNIT=SYSALLDA,SPACE=(TRK,(10,10))                        
+//SYSIN    DD  DUMMY                                                    
 

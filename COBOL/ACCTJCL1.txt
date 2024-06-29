@@ -1,33 +1,33 @@
-//IBMUSERX  JOB NOTIFY=&SYSUID                                          00010000
-//STEP1   EXEC  PGM=ACCTPGM1                                            00020000
-//STEPLIB   DD  DSN=IBMUSER.T5.LOAD,DISP=SHR                            00030000
-//SYSPRINT  DD SYSOUT=*                                                 00040000
-//SYSOUT    DD SYSOUT=*                                                 00050000
-//ACCTDD01  DD  DSN=MMD.ANILL.ACCT.FILE,DISP=(NEW,CATLG,DELETE),        00060001
-//   UNIT=3390,VOL=SER=ZASYS1,                                          00070002
-//   SPACE=(TRK,(1,1),RLSE),                                            00080000
-//   DSORG=PS,LRECL=30,RECFM=FB,BLKSIZE=0                               00090000
-//SYSIN  DD *                                                           00100000
-S1111                                                                   00110000
-BENYAMIN22                                                              00120002
-10000                                                                   00130000
-SAVINGS                                                                 00140003
-Y                                                                       00150000
-S2222                                                                   00151002
-ABASS PORI                                                              00152002
-10000                                                                   00153000
-SAVINGS                                                                 00154003
-Y                                                                       00155000
-C3333                                                                   00156002
-ALI AJAAMI                                                              00157002
-10000                                                                   00158000
-CURRENT                                                                 00159003
-Y                                                                       00159100
-C4444                                                                   00159202
-MMDALIVAHD                                                              00159302
-10000                                                                   00159400
-CURRENT                                                                 00159503
-N                                                                       00159600
-/*                                                                      00160000
-//                                                                      00170000
+//IBMUSERX  JOB NOTIFY=&SYSUID                                       
+//STEPLIB   DD  DSN=IBMUSER.T5.LOAD,DISP=SHR                         
+//STEP1   EXEC  PGM=ACCTPGM1                                         
+//SYSPRINT  DD SYSOUT=*                                              
+//SYSOUT    DD SYSOUT=*                                              
+//ACCTDD01  DD  DSN=MMD.ANILL.ACCT.FILE,DISP=(NEW,CATLG,DELETE),     
+//   UNIT=3390,VOL=SER=ZASYS1,                                       
+//   SPACE=(TRK,(1,1),RLSE),                                         
+//   DSORG=PS,LRECL=30,RECFM=FB,BLKSIZE=0                            
+//SYSIN  DD *                                                        
+S1111                                                                
+BENYAMIN22                                                           
+10000                                                                
+SAVINGS                                                              
+Y                                                                    
+S2222                                                                
+ABASS PORI                                                           
+10000                                                                
+SAVINGS                                                              
+Y                                                                    
+C3333                                                                
+ALI AJAAMI                                                           
+10000                                                                
+CURRENT                                                              
+Y                                                                    
+C4444                                                                
+MMDALIVAHD                                                           
+10000                                                                
+CURRENT                                                              
+N                                                                    
+/*                                                                   
+//                                                                   
 
