@@ -1,6 +1,6 @@
 //IBMUSERX  JOB NOTIFY=&SYSUID                                          
 //STEP1   EXEC  PGM=ACCTPGM2                                            
-//STEPLIB   DD  DSN=IBMUSER.T5.LOAD,DISP=SHR                            
+//STEPLIB   DD  DSN=MMD.ANILL.COBOL.LOAD,DISP=SHR                            
 //SYSPRINT  DD SYSOUT=*                                                 
 //SYSOUT    DD SYSOUT=*                                                 
 //ACCTDDIN  DD DSN=MMD.ANILL.ACCT.FILE,DISP=SHR                         
