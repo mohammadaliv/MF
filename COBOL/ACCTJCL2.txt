@@ -1,0 +1,16 @@
+//IBMUSERX  JOB NOTIFY=&SYSUID                                          00010000
+//STEP1   EXEC  PGM=ACCTPGM2                                            00020000
+//STEPLIB   DD  DSN=IBMUSER.T5.LOAD,DISP=SHR                            00030000
+//SYSPRINT  DD SYSOUT=*                                                 00040000
+//SYSOUT    DD SYSOUT=*                                                 00050000
+//ACCTDDIN  DD DSN=MMD.ANILL.ACCT.FILE,DISP=SHR                         00060000
+//SAVEDDOT  DD DSN=MMD.ANILL.SAVE.FILE,DISP=(NEW,CATLG,DELETE),         00070000
+//   UNIT=3390,VOL=SER=ZASYS1,                                          00080000
+//   SPACE=(TRK,(2,2),RLSE),                                            00090000
+//   DSORG=PS,LRECL=30,RECFM=FB,BLKSIZE=0                               00100000
+//CURRDDOT  DD DSN=MMD.ANILL.CURR.FILE,DISP=(NEW,CATLG,DELETE),         00101000
+//   UNIT=3390,VOL=SER=ZASYS1,                                          00102000
+//   SPACE=(TRK,(2,2),RLSE),                                            00103000
+//   DSORG=PS,LRECL=30,RECFM=FB,BLKSIZE=0                               00104000
+//                                                                      00110000
+

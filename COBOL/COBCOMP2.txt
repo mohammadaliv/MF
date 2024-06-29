@@ -1,0 +1,10 @@
+//COBCOMP  JOB  CLASS=A,MSGCLASS=1,MSGLEVEL=(1,1),NOTIFY=&SYSUID        00010000
+//PROCLIB JCLLIB ORDER=MMD.ANILL.COBOL                                  00011004
+//*******************************************************************   00020000
+//* COMPILE AND LINK EDIT A COBOL PROGRAM                               00030001
+//*******************************************************************   00040000
+//STEP1 EXEC COMPPROC,                                                  00060005
+//           SRCCOB=MMD.ANILL.COBOL(ACCTPGM1),                          00061006
+//           COPYBOOK=MMD.ANILL.COBOL.COPYLIB,                          00070008
+//           LOADPATH=MMD.ANILL.COBOL.LOAD(ACCTPGM1)                    00080006
+

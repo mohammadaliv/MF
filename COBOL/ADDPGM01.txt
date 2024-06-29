@@ -1,0 +1,32 @@
+       ID DIVISION.                                                     00010000
+       PROGRAM-ID. ADDPGM01.                                            00020000
+       AUTHOR. NAME.                                                    00030000
+       DATE-WRITTEN. TODAY.                                             00040000
+                                                                        00050000
+       ENVIRONMENT DIVISION.                                            00060000
+       INPUT-OUTPUT SECTION.                                            00070000
+       FILE-CONTROL.                                                    00080000
+                                                                        00090000
+       DATA DIVISION.                                                   00100000
+       FILE SECTION.                                                    00110000
+       WORKING-STORAGE SECTION.                                         00120000
+       01  NUM1    PIC    9(02)  VALUE  ZERO.                           00130000
+       01  NUM2    PIC    9(02)  VALUE  ZERO.                           00140000
+       01  TOTAL   PIC    9(02)  VALUE  ZERO.                           00150000
+       01  WS-ABENDPGM   PIC   X(08)   VALUE  'ABENDPGM'.               00160000
+       PROCEDURE DIVISION.                                              00170000
+       000-MAIN-PARA.                                                   00180000
+            DISPLAY  'ADDPGM01  STARTED'.                               00190000
+                                                                        00200000
+            ACCEPT  NUM1                                                00210000
+            ACCEPT  NUM2.                                               00220000
+                                                                        00230000
+            COMPUTE  TOTAL  =  NUM1  + NUM2                             00240000
+                         ON SIZE ERROR                                  00250000
+                           DISPLAY 'ERROR IN COMPUTE'                   00260000
+                           DISPLAY 'INPUT ARE ' NUM1 ' ' NUM2           00270000
+                           CALL WS-ABENDPGM.                            00280000
+                                                                        00290000
+            DISPLAY  'TOTAL  IS  '   TOTAL                              00300000
+            STOP RUN.                                                   00310000
+

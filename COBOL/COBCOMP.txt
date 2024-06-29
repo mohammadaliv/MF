@@ -1,0 +1,33 @@
+//COBCOMP  JOB  CLASS=A,MSGCLASS=1,MSGLEVEL=(1,1),NOTIFY=&SYSUID        00010000
+//*******************************************************************   00020002
+//* COMPILE A COBOL PROGRAM                                             00030000
+//*******************************************************************   00040002
+//COBOL EXEC PGM=IGYCRCTL,REGION=0M,PARM=('LIB')                        00050003
+//STEPLIB  DD   DSN=IGY410.SIGYCOMP,DISP=SHR                            00060000
+//SYSUT1   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00061004
+//SYSUT2   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00062004
+//SYSUT3   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00063004
+//SYSUT4   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00064004
+//SYSUT5   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00065004
+//SYSUT6   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00066004
+//SYSUT7   DD   UNIT=SYSALLDA,SPACE=(CYL,(1,1))                         00067004
+//SYSIN    DD   DSN=MMD.ANILL.COBOL(ADDPGM01),DISP=SHR                  00070003
+//SYSLIB   DD   DSN=MMD.ANILL.COBOL.COPYLIB,DISP=SHR                    00080003
+//SYSPRINT DD   SYSOUT=*                                                00090003
+//SYSLIN   DD   DSNAME=&&LOADSET,                                       00100004
+//         UNIT=SYSALLDA,DISP=(MOD,PASS),                               00110004
+//         SPACE=(TRK,(3,3)),                                           00120004
+//         DCB=(BLKSIZE=3200)                                           00130004
+//*******************************************************************   00200002
+//* LINK EDIT A COBOL PROGRAM                                           00210002
+//*******************************************************************   00220002
+//LKED   EXEC PGM=IEWBLINK,COND=(8,LT,COBOL),REGION=0M                  00230003
+//SYSLIB   DD  DSN=SYS1.LINKLIB,DISP=SHR                                00240003
+//         DD  DSN=CEE.SCEELKED,DISP=SHR                                00241004
+//SYSPRINT DD  SYSOUT=*                                                 00250003
+//SYSLIN   DD  DSN=&&LOADSET,DISP=(OLD,DELETE)                          00260003
+//         DD  DDNAME=SYSIN                                             00270004
+//SYSLMOD  DD  DSN=MMD.ANILL.COBOL.LOAD(ADDPGM01),DISP=OLD              00280003
+//SYSUT1   DD  UNIT=SYSALLDA,SPACE=(TRK,(10,10))                        00290003
+//SYSIN    DD  DUMMY                                                    00300003
+

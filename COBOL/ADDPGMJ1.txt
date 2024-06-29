@@ -1,0 +1,11 @@
+//TUSER30  JOB NOTIFY=&SYSUID                                           00010003
+//STEP1   EXEC  PGM=ADDPGM01                                            00020000
+//STEPLIB   DD  DSN=MMD.ANILL.COBOL.LOAD,DISP=SHR                       00030001
+//SYSPRINT  DD  SYSOUT=*                                                00040000
+//SYSOUT    DD  SYSOUT=*                                                00050000
+//SYSIN  DD *                                                           00060000
+01                                                                      00070002
+02                                                                      00080002
+/*                                                                      00090000
+//                                                                      00100000
+
